@@ -1,0 +1,16 @@
+.root {
+    blue-alliance: #0D47A1;
+    red-alliance: #B71C1C;
+}
+
+.red-alliance-box {
+    -fx-background-color: red-alliance;
+}
+
+.blue-alliance-box {
+    -fx-background-color: blue-alliance;
+}
+
+.default-box {
+    -fx-background-color: #666;
+}

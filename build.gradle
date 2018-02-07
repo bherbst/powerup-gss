@@ -1,0 +1,34 @@
+buildscript {
+    ext.kotlin_version = '1.2.21'
+
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+plugins {
+    id "org.jetbrains.kotlin.jvm" version "1.2.21"
+    id "application"
+}
+
+group 'com.bryanherbst'
+version '1.0-SNAPSHOT'
+
+mainClassName = 'com.bryanherbst.gss.PowerUpGssApplication'
+
+repositories {
+    mavenCentral()
+    maven { url "http://first.wpi.edu/FRC/roborio/maven/release/" }
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile "edu.wpi.first.ntcore:ntcore-java:4.0.0"
+
+    runtime group: "edu.wpi.first.wpiutil", name: "wpiutil-java", version: "3.0.0"
+    runtime group: "edu.wpi.first.ntcore", name: "ntcore-jni", version: "4.+", classifier: "all"
+
+}
