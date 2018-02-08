@@ -5,6 +5,8 @@ This is a Java application that provides game-specific data to robots for the 20
 It is intended for pre-season events (typically "Week Zero" events), since *FIRST* will not have a mechanism in place
 for those events to provide the game-specific data through the official APIs.
 
+![Screenshot](web-resources/screenshot.png)
+
 ## Clients
 
 This app publishes the scale and plate randomization to NetworkTables ([see the WPILib intro here](http://wpilib.screenstepslive.com/s/currentCS/m/75361/l/843361-what-is-networktables)).
@@ -27,6 +29,9 @@ String gameData = offSeasonNetworkTable
 
 Note that you need to know the IP address of the computer running the server (this application).
 If that computer is running the FMS software, it is likely **10.0.100.5**.
+
+For a one-page document containing instructions that you can hand out to teams at events you are hosting, 
+check out [Event Information](Event Information).
 
 ## Running the server
 
