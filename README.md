@@ -27,6 +27,38 @@ String gameData = offSeasonNetworkTable
     // e.g. "LRL" or "LLL"
 ```
 
+Example C++ - Here we use the existing Drivetrain Subsystem to connect to the server and to store our function that retrieves the switch & scale data.
+
+```C++
+#include <networktables/NetworkTableInstance.h>
+
+Drivetrain::Drivetrain() : frc::Subsystem("Drivetrain") {
+...
+
+	// Open up a NetworkTables connection to the powerup-gss server and grab the game data.
+	// Note: This should probably be split into multiple parts or perhaps into it's own subsystem so we
+	// re-use the same connection to NT vs building, grab and destroy every time.
+	GSSinst = nt::NetworkTableInstance::Create();
+	GSSinst.StartClient("10.0.100.5",1735);
+	GSSinst.AddLogger({}, 0, 99);
+}
+
+std::string Drivetrain::getGameSpecificMessage() {
+	// Return the switch & scale data pulled from the NetworkTable entry.
+	return GSSinst.GetTable("OffseasonFMSInfo")->GetEntry("GameData").GetString("defaultValue");
+}
+```
+
+To get the data, simply ask the Drivetrain::getGameSpecificMessage function from your autononmous command or AutonomousInit(). Note: This example just display the data. You will want to act on the data retrieved from getGameSpecificMessage().
+
+```
+void AutonomousCommand::Initialize() {
+	// Grab the game data and push it to the console.
+	std::cout << "GameData: " << Robot::drivetrain->getGameSpecificMessage() << std::endl;
+}
+```
+
+
 Note that you need to know the IP address of the computer running the server (this application).
 If that computer is running the FMS software, it is likely **10.0.100.5**.
 
