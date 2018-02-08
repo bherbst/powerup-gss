@@ -31,7 +31,7 @@ Note that you need to know the IP address of the computer running the server (th
 If that computer is running the FMS software, it is likely **10.0.100.5**.
 
 For a one-page document containing instructions that you can hand out to teams at events you are hosting, 
-check out [Event Information](Event Information).
+check out [Event Information](Event%20Information.md).
 
 ## Running the server
 
