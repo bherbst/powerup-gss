@@ -12,7 +12,8 @@ The data is published to the `"OffseasonFMSInfo"` table in the `"GameData"` entr
 This entry follows the same format (e.g. `"LRL"`) as the official WPILib API `DriverStation.getInstance().getGameSpecificMessage();`.
 
 An example Java implementation to get this data would look like this:
-```
+
+```Java
 NetworkTableInstance offSeasonNetworkTable = NetworkTableInstance.create()
 offSeasonNetworkTable.startClient("10.0.100.5")
 String gameData = offSeasonNetworkTable
