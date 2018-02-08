@@ -7,7 +7,7 @@ the official APIs. We have, however, created a system that will allow you to ret
 information in a similar fashion.
 
 **Critical:** This mechanism will **only work at this event.** At the end of this event, you should go back to using the
-official APIs from WPILib as described in the control system documentation at[wpilib.screenstepslive.com](wpilib.screenstepslive.com).
+official APIs from WPILib as described in the control system documentation at [wpilib.screenstepslive.com](wpilib.screenstepslive.com).
 
 ### Technical Details
 We are running a NetworkTables server on our FMS computer (this computer starts the matches and controls your driver station
