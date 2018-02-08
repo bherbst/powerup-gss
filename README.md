@@ -5,7 +5,7 @@ This is a Java application that provides game-specific data to robots for the 20
 It is intended for pre-season events (typically "Week Zero" events), since *FIRST* will not have a mechanism in place
 for those events to provide the game-specific data through the official APIs.
 
-![Screenshot](web-resources/screenshot.png ?raw=true)
+![Screenshot](web-resources/screenshot.png?raw=true)
 
 ## Clients
 
