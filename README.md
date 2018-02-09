@@ -27,10 +27,30 @@ String gameData = offSeasonNetworkTable
     // e.g. "LRL" or "LLL"
 ```
 
-Example C++ - Here we use the existing Drivetrain Subsystem to connect to the server and to store our function that retrieves the switch & scale data.
+C++ Example - Here we use the existing Drivetrain Subsystem to connect to the server and to store our function that retrieves the switch & scale data.
 
-```C++
+```
+Drivetrain.h
+
 #include <networktables/NetworkTableInstance.h>
+
+/**
+ *
+ *
+ * @author ExampleAuthor
+ */
+class Drivetrain: public frc::Subsystem {
+private:
+...
+	nt::NetworkTableInstance GSSinst;
+public:
+...
+	std::string getGameSpecificMessage();
+...
+};
+```
+```
+Drivetrain.cpp
 
 Drivetrain::Drivetrain() : frc::Subsystem("Drivetrain") {
 ...
